@@ -32,8 +32,9 @@ cook_book = [
 ]
 
 persons = int(input('Введите на какое количество персон рассчитать продукты: '))
-for i in range(len(cook_book)):
-    for j in range(len(cook_book[i][1])):
-        cook_book[i][1][j][1] = cook_book[i][1][j][1] * persons
-print(cook_book)
+for dish in cook_book:
+    print(dish[0] + ':')
+    for ingridient in dish[1]:
+        print(ingridient[0], ingridient[1] * persons, ingridient[2])
+    print()
 
