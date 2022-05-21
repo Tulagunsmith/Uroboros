@@ -10,8 +10,13 @@ geo_logs = [
     {'visit9': ['Курск', 'Россия']},
     {'visit10': ['Архангельск', 'Россия']}
 ]
+geo_logs_filtered = []
+
 
 for logs in geo_logs:
-    for visit, place in logs.items():
+    for visit, place in list(logs.items()):
         if 'Россия' in place:
-            print(visit, place)
+            geo_logs_filtered.append(logs)
+
+
+print(geo_logs_filtered)
