@@ -12,7 +12,7 @@ weight_10 = 0
 quantity = 55
 
 common = total_weight // quantity
-rest_weight = 400  #total_weight - (common * quantity)
+rest_weight = 400  # total_weight - (common * quantity)
 print(rest_weight)
 while rest_weight >= 3:
     if rest_weight >= 10:
@@ -49,3 +49,30 @@ print(f'Количество кос по 10 г. {weight_10} шт.\n'
       f'Количество кос по 3 г. {weight_3} шт.')
 print(rest_weight)
 print('Леша - молодец!')
+
+
+def amount():
+    braid = input('Введите необходимое количество кос: ')
+    if braid.isdigit():
+        return int(braid)
+    else:
+        return False
+
+
+def total_weight():
+    weight = input('Введите расчетный вес материала: ')
+    if weight.isdigit():
+        return int(weight)
+    else:
+        return False
+
+
+def braids_weight():
+    braid_selection = (input('Введите косы какого веса будут использованы в комплекте: ')).split()
+    for i in range(len(braid_selection)):
+        braid_selection[i] = int(braid_selection[i])
+    braid_selection.sort()
+    return braid_selection
+
+
+print(braids_weight())
