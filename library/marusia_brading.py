@@ -75,4 +75,22 @@ def braids_weight():
     return braid_selection
 
 
-print(braids_weight())
+def counting(remain_weight, braid_weight):
+    if remain_weight >= braid_weight:
+        remain_weight -= braid_weight
+    return remain_weight
+
+
+weight = total_weight()
+braids = braids_weight()
+braids_count = {}
+while weight >= braids[0]:
+    for i in range(len(braids) - 1, - 1, - 1):
+        if weight >= braids[i]:
+            weight = counting(weight, braids[i])
+            braids_count.setdefault(braids[i], []).append(1)
+        else:
+            continue
+        print('Остаток', weight)
+print(weight, braids, sep='\n')
+print(braids_count)
