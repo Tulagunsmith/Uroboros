@@ -15,7 +15,7 @@ def total_weight():
 
 
 def braids_weight():
-    braid_selection = (input('Введите косы какого веса будут использованы в комплекте: ')).split()
+    braid_selection = (input('Введите (через "пробел") косы какого веса будут использованы в комплекте: ')).split()
     for i in range(len(braid_selection)):
         braid_selection[i] = int(braid_selection[i])
     braid_selection.sort()
